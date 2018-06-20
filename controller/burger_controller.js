@@ -16,7 +16,7 @@ router.post("/:id", function(req, res) {
     burger.insertOne('burgerlist', name, function(data){
         console.log('controller.js post')
         console.log(data)
-        res.render('index', {key: data});
+        // res.render('index', {key: data});
     })
 })
 

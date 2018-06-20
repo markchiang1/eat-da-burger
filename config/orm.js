@@ -12,8 +12,8 @@ var orm = {
       })
     },
     insertOne : function(tableName, name, cb){
-        var query = `INSERT INTO ?? (burger_name, devoured);
-        VALUES ('?', false)`
+        var query = `INSERT INTO ?? (burger_name, devoured)
+        VALUES (?, false);`
         connection.query(query, [tableName, name], function(err, result) {
         if (err) throw err;
         cb(result)
