@@ -1,0 +1,31 @@
+
+<div class="container">
+    
+    <div class="row">
+       <div class="col-sm">
+           <div class="container" style="background-color:rgb(120, 120, 120, 0.7)">
+                <h1 style="color:white">Ready to Eat</h1>
+                <h3 style="color:white"> 
+                    {{#each key}}
+                        {{#unless devoured}}
+                            <button>{{ burger_name}}</button><button class=>x</button><div>  </div>
+                        {{/unless}}   
+                    {{/each}}
+                </h3>  
+           </div>
+        </div>
+        
+        <div class="col-sm">
+            <div class = "container" style="background-color:rgb(120, 120, 120, 0.7)">
+                <h1 style="color:white">Eaten Burgers</h1>
+                <h3 style="color:white"> 
+                    {{#each key}}
+                        {{#if devoured}}
+                            <button>{{ burger_name}}</button><button>x</button><div>  </div> 
+                        {{/if}}   
+                    {{/each}}
+                </h3>
+            </div>
+        </div>
+    </div> 
+</div>
