@@ -12,7 +12,8 @@ router.get("/", function(req, res) {
 })
 
 router.post("/:id", function(req, res) {
-    burger.selectAll(function(data){
+    var name = req.params.id
+    burger.insertOne('burgerlist', name, function(data){
         console.log('controller.js post')
         console.log(data)
         res.render('index', {key: data});
