@@ -9,8 +9,8 @@ var burger = {
             cb(data)
         })
     },
-    insertOne : function(name, cb){
-        orm.insertOne('burgerlist', name, function(data){
+    insertOne : function(tableName, name, cb){
+        orm.insertOne(tableName, name, function(data){
             cb(data)
         })
     },

@@ -12,28 +12,29 @@ router.get("/", function(req, res) {
 })
 
 router.post("/:id", function(req, res) {
-    var name = req.params.id
-    burger.insertOne('burgerlist', name, function(data){
-        console.log('controller.js post')
-        console.log(data)
-        // res.render('index', {key: data});
+    var burgerName = req.params.id
+    console.log('burger_controller', burgerName);
+
+    burger.insertOne('burgerlist', burgerName, function(data){
+        console.log(data);
+        
     })
 })
 
 router.put("/:id", function(req, res) {
-    burger.selectAll(function(data){
-        console.log('controller.js put')
-        console.log(data)
-        res.render('index', {key: data});
-    })
+    // burger.selectAll(function(data){
+    //     console.log('controller.js put')
+    //     console.log(data)
+    //     res.render('index', {key: data});
+    // })
 })
 
 router.delete("/:id", function(req, res) {
-    burger.selectAll(function(data){
-        console.log('controller.js delete')
-        console.log(data)
-        res.render('index', {key: data});
-    })
+    // burger.selectAll(function(data){
+    //     console.log('controller.js delete')
+    //     console.log(data)
+    //     res.render('index', {key: data});
+    // })
 })
 
 module.exports = router;

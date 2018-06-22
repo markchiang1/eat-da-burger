@@ -11,18 +11,22 @@ var orm = {
         cb(result)
       })
     },
-    insertOne : function(tableName, name, cb){
-        var query = `INSERT INTO ?? (burger_name, devoured)
-        VALUES (?, false);`
-        connection.query(query, [tableName, name], function(err, result) {
+    insertOne: function(tableName, burgerName, cb){
+      console.log("tableName", tableName.toString());
+      console.log("burgerName", burgerName.toString());
+
+         var query = `INSERT INTO ` +tableName.toString()+` (burger_name, devoured)
+        VALUES (`+ burgerName.toString() + `, false);`
+        connection.query(query, function(err, result) {
         if (err) throw err;
         cb(result)
       })
+      
     },
     updateOne : function(tableName, name, cb){
-        var query = `UPDATE ??
+        var query = `UPDATE`+ tableName+` 
         SET devoured = true
-        WHERE burgerName = ?;`
+        WHERE burgerName =`+ name+`;`
         connection.query(query, [tableName, name], function(err, result) {
         if (err) throw err;
         console.log(result);
