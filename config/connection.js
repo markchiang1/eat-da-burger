@@ -1,8 +1,8 @@
 
 var mysql = require('mysql');
-var connection;
+var connections;
 if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL)
+  connections = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
   connections = mysql.createConnection({
     host: 'localhost',
@@ -13,5 +13,5 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-connection.connect();
+connections.connect();
 module.exports = connections
