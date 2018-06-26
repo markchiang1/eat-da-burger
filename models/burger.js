@@ -10,6 +10,7 @@ var burger = {
         })
     },
     insertOne : function(tableName, name, cb){
+        console.log('models insert function: ', tableName, name)
         orm.insertOne(tableName, name, function(data){
             cb(data)
         })

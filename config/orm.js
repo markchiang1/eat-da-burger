@@ -16,7 +16,7 @@ var orm = {
       console.log("burgerName", burgerName.toString());
 
          var query = `INSERT INTO ` +tableName.toString()+` (burger_name, devoured)
-        VALUES (`+ burgerName.toString() + `, false);`
+        VALUES ("`+burgerName+`", false);`
         connection.query(query, function(err, result) {
         if (err) throw err;
         cb(result)

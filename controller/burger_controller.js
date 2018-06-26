@@ -16,8 +16,12 @@ router.post("/:id", function(req, res) {
     console.log('burger_controller', burgerName);
 
     burger.insertOne('burgerlist', burgerName, function(data){
-        console.log(data);
-        
+       
+        if (data.affectedRows){
+            res.send(200);
+        } else {
+            res.send(400);
+        }
     })
 })
 
